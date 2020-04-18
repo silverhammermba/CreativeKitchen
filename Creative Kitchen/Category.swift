@@ -11,4 +11,8 @@ import Foundation
 struct Category {
     let name: String
     let options: [String]
+
+    func sample() -> String {
+        return options.randomElement()!
+    }
 }

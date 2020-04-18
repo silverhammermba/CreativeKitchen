@@ -13,15 +13,60 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Creative_Kitchen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVH-Wr-dau" userLabel="Like">
+                                <rect key="frame" x="259" y="559" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eVH-Wr-dau" secondAttribute="height" multiplier="1:1" id="EhN-0s-cy0"/>
+                                    <constraint firstAttribute="width" constant="100" id="ZXC-nO-YyS"/>
+                                </constraints>
+                                <state key="normal" image="Check">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="likePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CeA-L6-crF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQm-4z-vIS" userLabel="Dislike">
+                                <rect key="frame" x="16" y="559" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YQm-4z-vIS" secondAttribute="height" multiplier="1:1" id="PEc-VA-8vF"/>
+                                    <constraint firstAttribute="width" constant="100" id="bKh-II-JHC"/>
+                                </constraints>
+                                <state key="normal" image="Cycle">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dislikePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BFz-Fx-gVf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YQm-4z-vIS" firstAttribute="width" secondItem="YQm-4z-vIS" secondAttribute="height" multiplier="1:1" id="0KW-kw-5gA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eVH-Wr-dau" secondAttribute="trailing" constant="16" id="A3b-PA-PEA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eVH-Wr-dau" secondAttribute="bottom" constant="8" id="MqN-7f-y5E"/>
+                            <constraint firstItem="YQm-4z-vIS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QcZ-Tw-ljW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YQm-4z-vIS" secondAttribute="bottom" constant="8" id="SxI-42-E20"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="dislikeButton" destination="YQm-4z-vIS" id="0Ik-SQ-XEG"/>
+                        <outlet property="likeButton" destination="eVH-Wr-dau" id="hUt-OC-WDm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="121"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Check" width="100" height="100"/>
+        <image name="Cycle" width="100" height="100"/>
+    </resources>
 </document>

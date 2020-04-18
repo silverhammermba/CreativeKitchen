@@ -17,11 +17,30 @@ class OptionView: UIView {
     public private(set) lazy var label: UILabel = {
         let l = UILabel()
 
-        l.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        l.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         if #available(iOS 13, *) {
             l.textColor = .label
         } else {
             l.textColor = .black
+        }
+        l.numberOfLines = 1
+        l.lineBreakMode = .byTruncatingTail
+        l.allowsDefaultTighteningForTruncation = true
+        l.minimumScaleFactor = 0.7
+        l.adjustsFontSizeToFitWidth = true
+        l.translatesAutoresizingMaskIntoConstraints = false
+
+        return l
+    }()
+
+    public private(set) lazy var sublabel: UILabel = {
+        let l = UILabel()
+
+        l.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        if #available(iOS 13, *) {
+            l.textColor = .secondaryLabel
+        } else {
+            l.textColor = .gray
         }
         l.numberOfLines = 1
         l.lineBreakMode = .byTruncatingTail
@@ -55,6 +74,7 @@ class OptionView: UIView {
 
     private func setup() {
         addSubview(label)
+        addSubview(sublabel)
         addSubview(toggle)
 
         clipsToBounds = true
@@ -62,9 +82,12 @@ class OptionView: UIView {
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
 
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 48),
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 1),
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor),
+            sublabel.leadingAnchor.constraint(equalTo: label.leadingAnchor),
+            sublabel.trailingAnchor.constraint(equalTo: label.trailingAnchor),
+            sublabel.topAnchor.constraint(equalTo: label.bottomAnchor),
+            sublabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -1),
             toggle.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8),
             toggle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             toggle.centerYAnchor.constraint(equalTo: centerYAnchor),

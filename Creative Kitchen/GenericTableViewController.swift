@@ -9,7 +9,7 @@
 import UIKit
 
 /// A table view that contains any kind of view in its cells, reconfigurable on the fly
-/// by changing the callback properties
+/// by changing the public callback properties
 class GenericTableViewController<V: UIView, C: ContainerTableViewCell<V>>: UITableViewController {
     public init(style: UITableView.Style, viewType: V.Type) {
         // viewType is unused, but it spares us from using the full generic syntax when initializing
