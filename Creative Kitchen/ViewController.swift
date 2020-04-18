@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct Option {
+    let val: Int
+    var on: Bool
+}
+
 class ViewController: UIViewController {
     public enum State {
         case loading(message: String)
@@ -31,12 +36,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let data = (0..<1000).map { $0 }
+        var data = (0..<1000).map { Option(val: $0, on: false) }
 
         let table = GenericTableViewController(style: .plain, viewType: OptionView.self)
         table.configureView = { i, v in
-            v.label.text = "Row \(data[i.row])"
-            v.toggle.isOn = false
+            v.label.text = "Row \(data[i.row].val)"
+            v.toggle.isOn = data[i.row].on
+            v.toggleAction = { data[i.row].on = $0 }
         }
         table.numberOfRows = { data.count }
 

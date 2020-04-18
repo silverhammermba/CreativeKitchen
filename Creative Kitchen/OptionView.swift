@@ -37,9 +37,12 @@ class OptionView: UIView {
         let s = UISwitch()
 
         s.translatesAutoresizingMaskIntoConstraints = false
+        s.addTarget(self, action: #selector(switchToggled(sender:)), for: .valueChanged)
 
         return s
     }()
+
+    public var toggleAction: (Bool) -> Void = { _ in }
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,5 +69,9 @@ class OptionView: UIView {
             toggle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             toggle.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
+    }
+
+    @IBAction func switchToggled(sender: UISwitch) {
+        toggleAction(sender.isOn)
     }
 }
