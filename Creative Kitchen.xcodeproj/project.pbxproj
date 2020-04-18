@@ -21,6 +21,8 @@
 		64858EF9244B8E1000873DA9 /* CategoryEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858EF8244B8E0F00873DA9 /* CategoryEditViewController.swift */; };
 		64858EFF244B8E7400873DA9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858EFE244B8E7400873DA9 /* Category.swift */; };
 		64858F01244B941100873DA9 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858F00244B941100873DA9 /* OptionView.swift */; };
+		64858F03244B9CEC00873DA9 /* ContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858F02244B9CEC00873DA9 /* ContainerTableViewCell.swift */; };
+		64858F05244B9FE100873DA9 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858F04244B9FE100873DA9 /* GenericTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		64858EF8244B8E0F00873DA9 /* CategoryEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditViewController.swift; sourceTree = "<group>"; };
 		64858EFE244B8E7400873DA9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		64858F00244B941100873DA9 /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
+		64858F02244B9CEC00873DA9 /* ContainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableViewCell.swift; sourceTree = "<group>"; };
+		64858F04244B9FE100873DA9 /* GenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				64858EC3244B889500873DA9 /* SceneDelegate.swift */,
 				64858EF6244B8D6400873DA9 /* UIViewController+Child.swift */,
 				64858EC5244B889500873DA9 /* ViewController.swift */,
+				64858F04244B9FE100873DA9 /* GenericTableViewController.swift */,
+				64858F02244B9CEC00873DA9 /* ContainerTableViewCell.swift */,
 				64858F00244B941100873DA9 /* OptionView.swift */,
 				64858EF8244B8E0F00873DA9 /* CategoryEditViewController.swift */,
 				64858EF4244B8B1400873DA9 /* IdeaViewController.swift */,
@@ -282,8 +288,10 @@
 				64858ECC244B889500873DA9 /* Creative_Kitchen.xcdatamodeld in Sources */,
 				64858EF5244B8B1400873DA9 /* IdeaViewController.swift in Sources */,
 				64858EC2244B889500873DA9 /* AppDelegate.swift in Sources */,
+				64858F03244B9CEC00873DA9 /* ContainerTableViewCell.swift in Sources */,
 				64858EC4244B889500873DA9 /* SceneDelegate.swift in Sources */,
 				64858EF7244B8D6400873DA9 /* UIViewController+Child.swift in Sources */,
+				64858F05244B9FE100873DA9 /* GenericTableViewController.swift in Sources */,
 				64858F01244B941100873DA9 /* OptionView.swift in Sources */,
 				64858EFF244B8E7400873DA9 /* Category.swift in Sources */,
 			);

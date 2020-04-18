@@ -31,20 +31,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let option = OptionView(frame: view.frame)
-        option.label.text = "Oh my isn't this really long text going to run off the end of the screen?"
-        option.toggle.isOn = false
-        option.translatesAutoresizingMaskIntoConstraints = false
+        let data = (0..<1000).map { $0 }
 
-        view.addSubview(option)
+        let table = GenericTableViewController(style: .plain, viewType: OptionView.self)
+        table.configureView = { i, v in
+            v.label.text = "Row \(data[i.row])"
+            v.toggle.isOn = false
+        }
+        table.numberOfRows = { data.count }
 
-        NSLayoutConstraint.activate([
-            option.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            option.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            option.topAnchor.constraint(equalTo: view.centerYAnchor, constant: view.safeAreaInsets.top),
-        ])
+
+        install(table)
     }
-
-
 }
 

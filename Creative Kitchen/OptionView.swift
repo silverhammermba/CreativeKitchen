@@ -8,6 +8,11 @@
 
 import UIKit
 
+/// A reusable view consisting of a switch on the right and a one-line label taking
+/// up the reamining room on the left.
+///
+/// After construction, configure the OptionView via its public properties,
+/// set `translatesAutoresizingMaskIntoConstraints = false`, and install constraints
 class OptionView: UIView {
     public private(set) lazy var label: UILabel = {
         let l = UILabel()

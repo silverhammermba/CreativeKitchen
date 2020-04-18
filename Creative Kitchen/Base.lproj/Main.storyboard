@@ -15,38 +15,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M70-HF-HMw" userLabel="Container">
-                                <rect key="frame" x="0.0" y="138" width="414" height="128"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVb-oL-sds">
-                                        <rect key="frame" x="8" y="53.5" width="341" height="21"/>
-                                        <string key="text">long label is long long label is long long label is long long label is long long label is long long label is long long label is long long label is long long label is long </string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oxt-a8-EHp">
-                                        <rect key="frame" x="357" y="48.5" width="51" height="31"/>
-                                    </switch>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstItem="oxt-a8-EHp" firstAttribute="leading" secondItem="RVb-oL-sds" secondAttribute="trailing" constant="8" id="A2x-V2-rpg"/>
-                                    <constraint firstItem="RVb-oL-sds" firstAttribute="centerY" secondItem="M70-HF-HMw" secondAttribute="centerY" id="EUt-Oy-gsq"/>
-                                    <constraint firstAttribute="trailing" secondItem="oxt-a8-EHp" secondAttribute="trailing" constant="8" id="K26-8W-TXf"/>
-                                    <constraint firstItem="oxt-a8-EHp" firstAttribute="centerY" secondItem="M70-HF-HMw" secondAttribute="centerY" id="LD3-6j-8nB"/>
-                                    <constraint firstAttribute="height" constant="128" id="c4M-YA-q2y"/>
-                                    <constraint firstItem="RVb-oL-sds" firstAttribute="leading" secondItem="M70-HF-HMw" secondAttribute="leading" constant="8" id="nnq-vh-nnX"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="M70-HF-HMw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6c3-fl-rxM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M70-HF-HMw" secondAttribute="trailing" id="A1A-DC-EOU"/>
-                            <constraint firstItem="M70-HF-HMw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="94" id="Bh0-7S-XZF"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
