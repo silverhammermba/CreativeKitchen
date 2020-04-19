@@ -40,6 +40,10 @@ class GenericTableViewController<V: UIView, C: ContainerTableViewCell<V>>: UITab
         tableView.register(C.self, forCellReuseIdentifier: "cell")
     }
 
+    public func view(for indexPath: IndexPath) -> V? {
+        return (tableView.cellForRow(at: indexPath) as? C)?.view
+    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

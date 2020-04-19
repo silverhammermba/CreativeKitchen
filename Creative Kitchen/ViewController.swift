@@ -57,10 +57,9 @@ class ViewController: UIViewController {
             v.toggleAction = { self.options[i.row].frozen = $0 }
         }
         table.didSelectView = { i, v in
-            self.showCategory(self.options[i.row].category, from: v)
+            self.showCategory(index: i)
         }
         table.numberOfRows = { self.options.count }
-        // TODO: when selecting a row, let you edit it
 
         install(table)
 
@@ -71,7 +70,10 @@ class ViewController: UIViewController {
         view.bringSubviewToFront(dislikeButton)
     }
 
-    private func showCategory(_ category: CategoryViewModel, from source: OptionView) {
+    private func showCategory(index: IndexPath) {
+        let category = options[index.row].category
+        let source = table.view(for: index)!
+
         let controller = GenericTableViewController(style: .plain, viewType: LabelView.self)
         controller.modalPresentationStyle = .popover
         controller.popoverPresentationController?.sourceView = source
@@ -80,9 +82,9 @@ class ViewController: UIViewController {
             v.label.text = category.options[i.row]
         }
         controller.didSelectView = { i, v in
-            self.dismiss(animated: true) {
-                source.label.text = v.label.text
-            }
+            self.options[index.row].value = v.label.text!
+            self.table.tableView.reloadRows(at: [index], with: .automatic)
+            self.dismiss(animated: true)
         }
         controller.numberOfRows = { category.options.count }
         present(controller, animated: true)
