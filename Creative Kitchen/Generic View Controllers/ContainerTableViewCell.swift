@@ -11,9 +11,7 @@ import UIKit
 /// Generic adapter to use any view as a table view cell, designed for use with
 /// GenericTableViewController which configures the table for the view type
 class ContainerTableViewCell<V: UIView>: UITableViewCell {
-    public private(set) lazy var view: V = {
-        return V()
-    }()
+    public private(set) lazy var view = V()
 
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

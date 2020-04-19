@@ -17,10 +17,14 @@
 		64858EDC244B889700873DA9 /* Creative_KitchenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858EDB244B889700873DA9 /* Creative_KitchenTests.swift */; };
 		64858EE7244B889700873DA9 /* Creative_KitchenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858EE6244B889700873DA9 /* Creative_KitchenUITests.swift */; };
 		64858EF7244B8D6400873DA9 /* UIViewController+Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858EF6244B8D6400873DA9 /* UIViewController+Child.swift */; };
-		64858EFF244B8E7400873DA9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858EFE244B8E7400873DA9 /* Category.swift */; };
+		64858EFF244B8E7400873DA9 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858EFE244B8E7400873DA9 /* CategoryViewModel.swift */; };
 		64858F01244B941100873DA9 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858F00244B941100873DA9 /* OptionView.swift */; };
 		64858F03244B9CEC00873DA9 /* ContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858F02244B9CEC00873DA9 /* ContainerTableViewCell.swift */; };
 		64858F05244B9FE100873DA9 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858F04244B9FE100873DA9 /* GenericTableViewController.swift */; };
+		64858F0D244BE23200873DA9 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858F0C244BE23200873DA9 /* LabelView.swift */; };
+		64858F0F244BEA0300873DA9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858F0E244BEA0300873DA9 /* Category.swift */; };
+		64858F11244BEA2800873DA9 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858F10244BEA2800873DA9 /* Option.swift */; };
+		64858F13244BECAF00873DA9 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64858F12244BECAF00873DA9 /* DBHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,10 +61,14 @@
 		64858EE6244B889700873DA9 /* Creative_KitchenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creative_KitchenUITests.swift; sourceTree = "<group>"; };
 		64858EE8244B889700873DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64858EF6244B8D6400873DA9 /* UIViewController+Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Child.swift"; sourceTree = "<group>"; };
-		64858EFE244B8E7400873DA9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		64858EFE244B8E7400873DA9 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		64858F00244B941100873DA9 /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
 		64858F02244B9CEC00873DA9 /* ContainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableViewCell.swift; sourceTree = "<group>"; };
 		64858F04244B9FE100873DA9 /* GenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
+		64858F0C244BE23200873DA9 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		64858F0E244BEA0300873DA9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		64858F10244BEA2800873DA9 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		64858F12244BECAF00873DA9 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,19 +119,17 @@
 		64858EC0244B889500873DA9 /* Creative Kitchen */ = {
 			isa = PBXGroup;
 			children = (
+				64858F17244BF8A100873DA9 /* Generic View Controllers */,
+				64858F16244BF7FC00873DA9 /* Views */,
+				64858F15244BF7E100873DA9 /* DB */,
 				64858EC1244B889500873DA9 /* AppDelegate.swift */,
 				64858EC3244B889500873DA9 /* SceneDelegate.swift */,
-				64858EF6244B8D6400873DA9 /* UIViewController+Child.swift */,
+				64858EFE244B8E7400873DA9 /* CategoryViewModel.swift */,
 				64858EC5244B889500873DA9 /* ViewController.swift */,
-				64858F04244B9FE100873DA9 /* GenericTableViewController.swift */,
-				64858F02244B9CEC00873DA9 /* ContainerTableViewCell.swift */,
-				64858F00244B941100873DA9 /* OptionView.swift */,
-				64858EFE244B8E7400873DA9 /* Category.swift */,
 				64858EC7244B889500873DA9 /* Main.storyboard */,
 				64858ECD244B889700873DA9 /* Assets.xcassets */,
 				64858ECF244B889700873DA9 /* LaunchScreen.storyboard */,
 				64858ED2244B889700873DA9 /* Info.plist */,
-				64858ECA244B889500873DA9 /* Creative_Kitchen.xcdatamodeld */,
 			);
 			path = "Creative Kitchen";
 			sourceTree = "<group>";
@@ -144,6 +150,36 @@
 				64858EE8244B889700873DA9 /* Info.plist */,
 			);
 			path = "Creative KitchenUITests";
+			sourceTree = "<group>";
+		};
+		64858F15244BF7E100873DA9 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				64858ECA244B889500873DA9 /* Creative_Kitchen.xcdatamodeld */,
+				64858F0E244BEA0300873DA9 /* Category.swift */,
+				64858F10244BEA2800873DA9 /* Option.swift */,
+				64858F12244BECAF00873DA9 /* DBHelper.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		64858F16244BF7FC00873DA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				64858F0C244BE23200873DA9 /* LabelView.swift */,
+				64858F00244B941100873DA9 /* OptionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		64858F17244BF8A100873DA9 /* Generic View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				64858EF6244B8D6400873DA9 /* UIViewController+Child.swift */,
+				64858F02244B9CEC00873DA9 /* ContainerTableViewCell.swift */,
+				64858F04244B9FE100873DA9 /* GenericTableViewController.swift */,
+			);
+			path = "Generic View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,13 +315,17 @@
 			files = (
 				64858EC6244B889500873DA9 /* ViewController.swift in Sources */,
 				64858ECC244B889500873DA9 /* Creative_Kitchen.xcdatamodeld in Sources */,
+				64858F11244BEA2800873DA9 /* Option.swift in Sources */,
+				64858F0F244BEA0300873DA9 /* Category.swift in Sources */,
 				64858EC2244B889500873DA9 /* AppDelegate.swift in Sources */,
 				64858F03244B9CEC00873DA9 /* ContainerTableViewCell.swift in Sources */,
 				64858EC4244B889500873DA9 /* SceneDelegate.swift in Sources */,
 				64858EF7244B8D6400873DA9 /* UIViewController+Child.swift in Sources */,
+				64858F0D244BE23200873DA9 /* LabelView.swift in Sources */,
 				64858F05244B9FE100873DA9 /* GenericTableViewController.swift in Sources */,
 				64858F01244B941100873DA9 /* OptionView.swift in Sources */,
-				64858EFF244B8E7400873DA9 /* Category.swift in Sources */,
+				64858EFF244B8E7400873DA9 /* CategoryViewModel.swift in Sources */,
+				64858F13244BECAF00873DA9 /* DBHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

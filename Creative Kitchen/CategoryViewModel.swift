@@ -1,5 +1,5 @@
 //
-//  Category.swift
+//  CategoryViewModel.swift
 //  Creative Kitchen
 //
 //  Created by Maxwell Anselm on 4/18/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Category {
+struct CategoryViewModel {
     let name: String
     let options: [String]
 

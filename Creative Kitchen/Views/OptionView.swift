@@ -82,12 +82,12 @@ class OptionView: UIView {
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
 
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: topAnchor, constant: 1),
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 4),
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             sublabel.leadingAnchor.constraint(equalTo: label.leadingAnchor),
             sublabel.trailingAnchor.constraint(equalTo: label.trailingAnchor),
             sublabel.topAnchor.constraint(equalTo: label.bottomAnchor),
-            sublabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -1),
+            sublabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
             toggle.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8),
             toggle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             toggle.centerYAnchor.constraint(equalTo: centerYAnchor),

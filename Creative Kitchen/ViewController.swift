@@ -8,54 +8,8 @@
 
 import UIKit
 
-// TODO: load from DB
-let categories = [
-    Category(name: "Cuisine", options: [
-        "Italian",
-        "Mexican",
-        "Romanian",
-        "Indian",
-        "Chinese",
-        "Asian",
-        "French",
-        "American",
-        "Japanese",
-        "Mediterranean",
-        "Moroccan",
-    ]),
-    Category(name: "Type of Food", options: [
-        "Soup",
-        "Stew/curry",
-        "Salad",
-        "Stir Fry",
-        "Caserole/Baked dish",
-    ]),
-    Category(name: "Protein", options: [
-        "Mushrooms",
-        "Legumes",
-        "Eggs",
-        "Seafood",
-        "Tofu",
-        "\"Meat\"",
-        "Cheese/dairy",
-    ]),
-    Category(name: "Carbs", options: [
-        "Noodles",
-        "Rice/grains",
-        "Potato",
-        "Bread",
-    ]),
-    Category(name: "Greens", options: [
-        "Leafy Greens",
-        "Broccoli",
-        "Bok Choy",
-        "Seaweed",
-        "Collard/mustard greens",
-    ]),
-]
-
-struct Option {
-    let category: Category
+struct OptionViewModel {
+    let category: CategoryViewModel
     var value: String
     var frozen: Bool
 
@@ -67,8 +21,9 @@ struct Option {
 }
 
 class ViewController: UIViewController {
-    var options = categories.map { Option(category: $0, value: $0.sample(), frozen: false)}
-    let table = GenericTableViewController(style: .plain, viewType: OptionView.self)
+    var options: [OptionViewModel] = []
+    lazy var table = GenericTableViewController(style: .plain, viewType: OptionView.self)
+    lazy var dbHelper = DBHelper(container: (UIApplication.shared.delegate as! AppDelegate).persistentContainer)
 
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var dislikeButton: UIButton!
@@ -87,11 +42,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let categories: [Category] = (try? dbHelper.container.viewContext.fetch(Category.fetchRequest())) ?? []
+
+        options = categories.sorted(by: { $0.sortOrder < $1.sortOrder }).map { category in
+            let opts = category.options.map { $0.name }.sorted()
+            let catVm = CategoryViewModel(name: category.name, options: opts)
+            return OptionViewModel(category: catVm, value: catVm.sample(), frozen: false)
+        }
+
         table.configureView = { i, v in
             v.label.text = self.options[i.row].value
             v.sublabel.text = self.options[i.row].category.name
             v.toggle.isOn = self.options[i.row].frozen
             v.toggleAction = { self.options[i.row].frozen = $0 }
+        }
+        table.didSelectView = { i, v in
+            self.showCategory(self.options[i.row].category, from: v)
         }
         table.numberOfRows = { self.options.count }
         // TODO: when selecting a row, let you edit it
@@ -103,6 +69,23 @@ class ViewController: UIViewController {
 
         view.bringSubviewToFront(likeButton)
         view.bringSubviewToFront(dislikeButton)
+    }
+
+    private func showCategory(_ category: CategoryViewModel, from source: OptionView) {
+        let controller = GenericTableViewController(style: .plain, viewType: LabelView.self)
+        controller.modalPresentationStyle = .popover
+        controller.popoverPresentationController?.sourceView = source
+        controller.popoverPresentationController?.sourceRect = source.frame
+        controller.configureView = { i, v in
+            v.label.text = category.options[i.row]
+        }
+        controller.didSelectView = { i, v in
+            self.dismiss(animated: true) {
+                source.label.text = v.label.text
+            }
+        }
+        controller.numberOfRows = { category.options.count }
+        present(controller, animated: true)
     }
 }
 
