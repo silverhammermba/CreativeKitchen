@@ -13,7 +13,26 @@ import UIKit
 ///
 /// After construction, configure the OptionView via its public properties,
 /// set `translatesAutoresizingMaskIntoConstraints = false`, and install constraints
+@IBDesignable
 class OptionView: UIView {
+    @IBInspectable var text: String = "" {
+        didSet {
+            label.text = text
+        }
+    }
+
+    @IBInspectable var subtext: String = "" {
+        didSet {
+            sublabel.text = subtext
+        }
+    }
+
+    @IBInspectable var on: Bool = true {
+        didSet {
+            toggle.setOn(on, animated: false)
+        }
+    }
+
     public private(set) lazy var label: UILabel = {
         let l = UILabel()
 
@@ -69,7 +88,8 @@ class OptionView: UIView {
     }
 
     public required init?(coder: NSCoder) {
-        fatalError()
+        super.init(coder: coder)
+        setup()
     }
 
     private func setup() {

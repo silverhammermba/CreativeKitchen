@@ -66,8 +66,7 @@ class ViewController: UIViewController {
         likeButton.layer.cornerRadius = likeButton.frame.width / 2
         dislikeButton.layer.cornerRadius = dislikeButton.frame.width / 2
 
-        view.bringSubviewToFront(likeButton)
-        view.bringSubviewToFront(dislikeButton)
+        view.sendSubviewToBack(table.view)
     }
 
     private func showCategory(index: IndexPath) {

@@ -77,7 +77,7 @@ class DBHelper {
                 "Spinach",
                 "Asparagus",
                 "Kale",
-                "Argulua",
+                "Arugula",
                 "Mixed greens",
                 "Cabbage",
             ]),

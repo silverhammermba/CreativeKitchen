@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// A resuable view that is just a one-line label with some padding around it
+/// A reusable view that is just a one-line label with some padding around it
 class LabelView: UIView {
     public private(set) lazy var label: UILabel = {
         let l = UILabel()
